@@ -1,13 +1,80 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.calculator-main {
+  width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#display{
+  font-size: 2.5rem;
+  height: 80px;
+  background-color: #222;
+  color: white;
+  text-align: right;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.buttons{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+
+}
+
+.btn {
+  width: 80px;
+  font-size: 1.5rem;
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #d1d1d1;
+}
+
+.btn:active {
+  background-color: #c0c0c0;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Operator buttons */
+.op-btn {
+  background-color: #ff9500;
+  color: white;
+}
+
+.op-btn:hover {
+  background-color: #e68a00;
+}
+
+.op-btn:active {
+  background-color: #cc7a00;
+}
+
+/* Equal button */
+.btn.op-btn:last-child {
+  grid-column: span 2;
+  background-color: #34c759;
+}
+
+.btn.op-btn:last-child:hover {
+  background-color: #28a745;
+}
+
+.btn.op-btn:last-child:active {
+  background-color: #218838;
 }
